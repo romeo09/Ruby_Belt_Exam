@@ -1,0 +1,29 @@
+<h1>Idea Details:</h1>
+
+<div class="idea">
+   <% @posts.each do |post| %>
+      <p><a href="/users/<%= @user.id %>"><strong><%= post.user.name%></a> says:</strong> <%= post.content %></p><hr>
+   <%end%>
+</div>
+
+
+
+<div class="postsLiked">
+   <table>
+      <thead>
+         <tr>
+            <th>Alias:</th>
+            <th>Name:</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <%@liked_ideas .each do | a | %>
+               <td><%= a.alias %></td>
+               <td><%= a.name %></td>
+         </tr>
+         <%end%>
+      </tbody>
+   </table>
+</div><hr>
+<button type="button" name="profile"><a href="/posts/index/<%= @user.id %>">Back To My Profile</a></button>
