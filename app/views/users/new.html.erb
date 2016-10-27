@@ -2,11 +2,7 @@
 
 <h3>Please Complete The Form Below:</h3>
 
-<div class="errors">
-      <% if flash[:errors] %>
-      <h4><%= flash[:errors] %></h4>
-      <%end%>
-</div>
+
 
 <form class="new" action="/users" method="post">
    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
