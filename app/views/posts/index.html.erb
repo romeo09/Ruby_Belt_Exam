@@ -22,7 +22,7 @@
                 <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
                 <input type='submit' name="unlike" value='Unlike'>
              </form>
-             <p> <a href="/posts/<%= show.id %>"><%= show.likes.count %></a> People Like This</p>
+             <p> <a href="/posts/<%= show.id %>"><%= show.likes_count %></a> People Like This</p>
          <% else %>
              <form action='/likes' method='post'>
                 <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
