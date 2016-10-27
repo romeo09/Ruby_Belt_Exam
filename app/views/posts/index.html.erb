@@ -13,8 +13,8 @@
 <div id="posts">
   <h3>Look At All These Ideas:</h3><hr>
   <% if @posts != nil %>
-      <% @posts.each do |show| %>
-         <p><a href="/users/<%= show.user.id %>"><strong><%= show.user.name%></a> says:</strong> <%= show.content %></p><hr>
+      <% @most_likes.each do |show| %>
+         <p><a href="/users/<%= show.user_id %>"><strong><%= show.user.name%></a> says:</strong> <%= show.content %></p><hr>
          <% if show.users_liked_post.include?(current_user) %>
              <form action='/likes' method='post'>
                 <input type='hidden' name='_method' value='delete'>
