@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         redirect_to ("/posts/index/#{user.id}")
      else
-        flash[:errors] = user.errors.full_messages
+        flash[:errors] = 'Your login attempt failed!'
         redirect_to :root
      end
   end

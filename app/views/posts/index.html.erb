@@ -13,26 +13,26 @@
 <div id="posts">
   <h3>Posts:</h3><hr>
   <% if @posts != nil %>
-      <% @posts.each do |post| %>
-         <p><a href="/users/<%= @user.id %>"><strong><%= post.user.name%></a> says:</strong> <%= post.content %></p><hr>
-         <% if post.users_liked_post.include?(current_user) %>
+      <% @posts.each do |show| %>
+         <p><a href="/users/<%= @user.id %>"><strong><%= show.user.name%></a> says:</strong> <%= show.content %></p><hr>
+         <% if show.users_liked_post.include?(current_user) %>
              <form action='/likes' method='post'>
                 <input type='hidden' name='_method' value='delete'>
-                <input type='hidden' name='post_id' value='<%= post.id %>'>
+                <input type='hidden' name='post_id' value='<%= show.id %>'>
                 <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
                 <input type='submit' name="unlike" value='Unlike'>
              </form>
-             <p> <a href="/posts/<%= @post.id %>"><%= post.likes.count %></a> Person Likes This</p>
+             <p> <a href="/posts/<%= show.id %>"><%= show.likes.count %></a> Person Likes This</p>
          <% else %>
              <form action='/likes' method='post'>
                 <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
-                <input type='hidden' name='post_id' value='<%= post.id %>'>
+                <input type='hidden' name='post_id' value='<%= show.id %>'>
                 <input type='submit' name="like" value='Like Idea'>
              </form><hr>
          <% end %>
 
-         <% if post.user == current_user %>
-             <form action="/posts/<%= post.id %>" method="post">
+         <% if show.user == current_user %>
+             <form action="/posts/<%= show.id %>" method="post">
                 <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
                 <input name="_method" value="delete" type="hidden">
                 <input type="submit" value="Delete Post">
