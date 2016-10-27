@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
      most_likes = Post.top
+     @posts = Post.all.order('most_likes')
      @user = User.find(params[:id])
   end
 
