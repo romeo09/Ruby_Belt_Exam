@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
    has_many :posts
    has_many :likes, dependent: :destroy
-   has_many :posts_liked, through: :likes, source: :post, :include => :like, :order => 'likes.count'
+   has_many :posts_liked, through: :likes, source: :post, :include => :likes, :order => 'likes.count'
    has_secure_password
 
    email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
