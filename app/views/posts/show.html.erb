@@ -2,7 +2,7 @@
 
 <div class="idea">
    <% @posts.each do |post| %>
-      <p><a href="/users/<%= @user.id %>"><strong><%= post.user.name%></a> says:</strong> <%= post.content %></p><hr>
+      <p><a href="/users/<%= session[:user_id] %>"><strong><%= post.user.name%></a> says:</strong> <%= post.content %></p><hr>
    <%end%>
 </div>
 
