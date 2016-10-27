@@ -1,4 +1,4 @@
-<h1>Welcome <%= @user.alias %>!!</h1>
+<h1>Welcome, <%= @user.alias %>!!</h1>
 
 
 <div id="new_post">
@@ -11,7 +11,7 @@
 </div><br><hr>
 
 <div id="posts">
-  <h3>Posts:</h3><hr>
+  <h3>Look At All These Ideas:</h3><hr>
   <% if @posts != nil %>
       <% @posts.each do |show| %>
          <p><a href="/users/<%= show.user.id %>"><strong><%= show.user.name%></a> says:</strong> <%= show.content %></p><hr>
