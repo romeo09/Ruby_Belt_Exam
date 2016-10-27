@@ -6,6 +6,6 @@ class Post < ActiveRecord::Base
   validates :content, :presence => true
 
   def self.top
-     order('likes DESC')
+     order('like DESC')
   end
 end
