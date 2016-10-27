@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def show
      @user = User.where(session[:user_id]).all
      @post = Post.find(params[:id])
-     @liked_ideas = Post.first.users_liked_post
+     @liked_ideas = @post.users_liked_post
   end
 
   def new
