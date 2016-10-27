@@ -1,9 +1,7 @@
 <h1>Idea Details:</h1>
 
 <div class="idea">
-   <% @post.each do |post| %>
-      <p><a href="/users/<%= session[:user_id] %>"><strong><%= post.user.name%></a> says:</strong> <%= post.content %></p><hr>
-   <%end%>
+      <p><a href="/users/<%= session[:user_id] %>"><strong><%= @post.user.name%></a> says:</strong> <%= @post.content %></p><hr>
 </div>
 
 

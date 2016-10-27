@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   end
 
   def show
-     @posts = Post.all
      @user = User.where(session[:user_id]).all
      @post = Post.find(params[:id])
      @liked_ideas = Post.first.users_liked_post
