@@ -6,7 +6,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-     like = Like.where(post_id: params[:id], user_id: session[:user_id]).first.destroy
+     like = Like.where(post_id: params[:post_id], user_id: session[:user_id]).first.destroy
      redirect_to :back
   end
 end
