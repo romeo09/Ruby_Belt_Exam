@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-   has_many :posts
+   has_many :posts, counter_cache: true
    has_many :likes, dependent: :destroy
    has_many :posts_liked, through: :likes, source: :post, :include => :likes, :order => 'likes.count'
    has_secure_password

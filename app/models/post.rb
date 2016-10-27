@@ -4,4 +4,8 @@ class Post < ActiveRecord::Base
   has_many :users_liked_post, through: :likes, source: :user
 
   validates :content, :presence => true
+
+  def self.top
+     order('likes_count DESC').all
+  end
 end
