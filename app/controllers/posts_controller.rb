@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-     @posts = Post.all.order(:likes)
+     @posts = Post.group(session[:user_id]).order('posts_liked DESC')
      @user = User.find(params[:id])
   end
 
