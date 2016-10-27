@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def show
      @posts = Post.all
-     @user = User.find(params[:id])
+   #   @user = User.find(params[:id])
      @post = Post.find(params[:id])
      @liked_ideas = Post.first.users_liked_post
   end
