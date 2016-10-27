@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-     @posts = Post.top
+     most_likes = Post.top
      @user = User.find(params[:id])
   end
 
