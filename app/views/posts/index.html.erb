@@ -14,7 +14,7 @@
   <h3>Look At All These Ideas:</h3><hr>
   <% if @posts != nil %>
       <% @most_likes.each do |show| %>
-         <p><a href="/users/<%= show.user_id %>"><strong><%= show.user.name%></a> says:</strong> <%= show.content %></p><hr>
+         <p><a href="/users/<%= show.user_id %>"><strong><%= show.user.name%></a> says:</strong> <%= show.content %></p>
          <% if show.users_liked_post.include?(current_user) %>
              <form action='/likes' method='post'>
                 <input type='hidden' name='_method' value='delete'>
@@ -31,7 +31,7 @@
              </form>
          <% end %>
 
-         <% if show.user == current_user %>
+         <hr><% if show.user == current_user %>
              <form action="/posts/<%= show.id %>" method="post">
                 <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
                 <input name="_method" value="delete" type="hidden">
@@ -40,4 +40,4 @@
           <% end %>
       <% end %>
    <%end%>
-<hr></div><br><br>
+</div><br><br>
