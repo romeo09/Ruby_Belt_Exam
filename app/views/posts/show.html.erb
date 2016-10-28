@@ -1,7 +1,7 @@
 <h1>Idea Details:</h1>
 
 <div class="idea">
-      <p><a href="/users/<%= session[:user_id] %>"><strong><%= @post.user.name%></a> says:</strong> <%= @post.content %></p><hr>
+      <p><a href="/users/<%= @user.id %>"><strong><%= @post.user.name%></a> says:</strong> <%= @post.content %></p><hr>
 </div>
 
 
