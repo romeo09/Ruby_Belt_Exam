@@ -3,12 +3,6 @@
 <h4>Already A Member?</h4>
 <h5>Login Below:</h5>
 
-<div id="errors">
-   <% if flash[:errors] %>
-      <h4><%= flash[:errors] %></h4>
-   <%end%>
-</div>
-
 <div id="login">
    <form action="/sessions" method="post" role="form">
       <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">

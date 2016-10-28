@@ -23,12 +23,12 @@
                 <input type='submit' name="unlike" value='Unlike'>
              </form>
              <p> <a href="/posts/<%= show.id %>"><%= show.likes_count %></a> People Like This</p>
-         <% else %>
+         <% else %><hr>
              <form action='/likes' method='post'>
                 <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
                 <input type='hidden' name='post_id' value='<%= show.id %>'>
                 <input type='submit' name="like" value='Like Idea'>
-             </form><hr>
+             </form>
          <% end %>
 
          <% if show.user == current_user %>
@@ -40,4 +40,4 @@
           <% end %>
       <% end %>
    <%end%>
-</div><br><br>
+<hr></div><br><br>
